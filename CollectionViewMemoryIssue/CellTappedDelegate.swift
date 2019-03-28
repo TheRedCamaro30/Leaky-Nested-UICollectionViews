@@ -27,11 +27,11 @@ extension MainViewController:CellTappedDelegate{
             if completed == false{
                 self.collectionView.reloadData()
             }
+            print("remove cell called:\(self.arr.count)")
         }
     }
         
     func removeCell() {
-        print("remove cell called")
         self.collectionView.performBatchUpdates({
             arr.popLast()
             self.collectionView.deleteItems(at: [IndexPath(item: arr.count - 1, section: 0)])
@@ -40,6 +40,7 @@ extension MainViewController:CellTappedDelegate{
             if completed == false{
                 self.collectionView.reloadData()
             }
+            print("remove cell called:\(self.arr.count)")
         }
     }
 }
